@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Analytics Portfolio</title>
+    <title>Julia Al Rifai | Business Analytics Portfolio</title>
 
     <style>
       /* ============================================================
@@ -36,25 +36,21 @@
         margin-bottom: 30px;
       }
 
-      /* Empty space for photo — replace with your own <img> if you like */
       .photo {
         width: 140px;
         height: 140px;
         border-radius: 50%;
-        background: #ddd;
-        border: 2px dashed #aaa;
+        object-fit: cover;
+        border: 2px solid #aaa;
         margin: 0 auto 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 13px;
+        display: block;
       }
 
       header h1 {
         font-size: 28px;
         margin-bottom: 6px;
       } /* NAME */
+
       header p {
         font-size: 16px;
         color: #555;
@@ -87,6 +83,7 @@
       .tab-content {
         display: none;
       }
+
       .tab-content.active {
         display: block;
       }
@@ -127,10 +124,12 @@
       .card-text {
         padding: 14px;
       }
+
       .card-text h3 {
         font-size: 16px;
         margin-bottom: 6px;
       }
+
       .card-text p {
         font-size: 14px;
         color: #555;
@@ -151,11 +150,10 @@
          HEADER: photo, name, experiences
          ============================================================ -->
       <header>
-        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> -->
-        <div class="photo">Photo</div>
+        <img src="profile.jpg" alt="Julia Al Rifai" class="photo" />
 
         <h1>Julia Al Rifai</h1>
-        <p>Business Analyst · SQL · Python · Tableau</p>
+        <p>Business Analytics · SQL · Python · Excel</p>
       </header>
 
       <!-- ============================================================
@@ -174,7 +172,14 @@
       <div id="about" class="tab-content active">
         <div class="panel">
           <p>
-             I am a Master of Management in Analytics student at McGill University with a background in Digital Enterprise Management from the University of Toronto. My experience in digital marketing, paid media, and analytics has strengthened my ability to analyze data, identify meaningful insights, and translate them into practical business recommendations. I am seeking opportunities in business analytics and consulting where I can apply analytical problem-solving and business strategy to help organizations make data-driven decisions.
+            I am a Master of Management in Analytics student at McGill University
+            with a background in Digital Enterprise Management from the University
+            of Toronto. My experience in digital marketing, paid media, and
+            analytics has strengthened my ability to analyze data, identify
+            meaningful insights, and translate them into practical business
+            recommendations. I am seeking opportunities in business analytics and
+            consulting where I can apply analytical problem-solving and business
+            strategy to help organizations make data-driven decisions.
           </p>
         </div>
       </div>
@@ -221,10 +226,12 @@
         document.querySelectorAll(".tab-content").forEach(function (el) {
           el.classList.remove("active");
         });
+
         // remove active state from all buttons
         document.querySelectorAll(".tab-button").forEach(function (btn) {
           btn.classList.remove("active");
         });
+
         // show the selected tab + highlight the clicked button
         document.getElementById(id).classList.add("active");
         event.target.classList.add("active");
