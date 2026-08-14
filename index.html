@@ -5,82 +5,138 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Julia Al Rifai | Business Analytics Portfolio</title>
 
     <style>
       /* ============================================================
-       BASIC STYLES — students can tweak colors/fonts here
-       ============================================================ */
+         BASIC SETUP
+         ============================================================ */
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
 
+      :root {
+  --navy: #1f3553;
+  --navy-dark: #17283f;
+  --cream: #f3ede2;
+  --cream-light: #fffaf2;
+  --blue-light: #e8eef4;
+  --blue-soft: #dbe5ee;
+  --text: #26313d;
+  --muted: #66717d;
+  --border: #d4dce4;
+}
+
       body {
         font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f7f7f7;
-        line-height: 1.5;
+        background: var(--cream);
+        color: var(--text);
+        line-height: 1.6;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 1000px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 50px 24px 70px;
       }
 
-      /* ---------- HEADER (photo + name + subheading) ---------- */
+      /* ============================================================
+         HEADER
+         ============================================================ */
       header {
-        text-align: center;
-        margin-bottom: 30px;
-      }
+  text-align: center;
+  margin-bottom: 36px;
+  background: var(--navy);
+  padding: 35px 25px;
+  border-radius: 12px;
+}
 
-      .photo {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #aaa;
-        object-position: center 20%;
-        margin: 0 auto 16px;
-        display: block;
-      }
+header h1 {
+  color: white;
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+
+.headline {
+  font-size: 16px;
+  color: #e5ebf1;
+  margin-bottom: 16px;
+}
 
       header h1 {
-        font-size: 28px;
+        color: var(--navy);
+        font-size: 34px;
         margin-bottom: 6px;
-      } /* NAME */
+      }
 
-      header p {
+      .headline {
         font-size: 16px;
-        color: #555;
-      } /* EXPERIENCES */
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
 
-      /* ---------- TABS ---------- */
+      /* ---------- PROFESSIONAL LINKS ---------- */
+      .professional-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .professional-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: 0.2s ease;
+}
+
+.professional-links a:hover {
+  background: white;
+  color: var(--navy);
+}
+
+      /* ============================================================
+         TABS
+         ============================================================ */
       .tabs {
         display: flex;
         justify-content: center;
         gap: 10px;
-        margin-bottom: 24px;
+        margin-bottom: 26px;
       }
 
       .tab-button {
-        padding: 10px 22px;
-        border: 1px solid #ccc;
-        background: #fff;
+        padding: 11px 24px;
+        border: 1px solid var(--navy);
+        background: var(--cream-light);
+        color: var(--navy);
         cursor: pointer;
         font-size: 15px;
-        border-radius: 4px;
+        border-radius: 5px;
+        transition: 0.2s ease;
+      }
+
+      .tab-button:hover {
+        background: #ece5d8;
       }
 
       .tab-button.active {
-        background: #2c3e50;
-        color: #fff;
-        border-color: #2c3e50;
+        background: var(--navy);
+        color: white;
       }
 
-      /* ---------- TAB CONTENT ---------- */
+      /* ============================================================
+         TAB CONTENT
+         ============================================================ */
       .tab-content {
         display: none;
       }
@@ -89,87 +145,179 @@
         display: block;
       }
 
-      .panel {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 24px;
+     .panel {
+  background: var(--cream-light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(31, 53, 83, 0.06);
+}
+
+      .section-title {
+        color: var(--navy);
+        font-size: 23px;
+        margin-bottom: 16px;
       }
-/* ---------- EXPERIENCE ---------- */
-.experience-item {
-  margin-bottom: 24px;
-}
 
-.experience-item:last-child {
-  margin-bottom: 0;
-}
+      /* ============================================================
+         ABOUT ME
+         ============================================================ */
+      .about-text {
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
 
-.experience-item h3 {
-  font-size: 17px;
-  margin-bottom: 3px;
-}
+      .skills-title {
+        color: var(--navy);
+        font-size: 17px;
+        margin-bottom: 10px;
+      }
 
-.experience-item .company {
-  font-size: 14px;
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 3px;
-}
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
 
-.experience-item .date {
+     .skill {
+  background: var(--blue-soft);
+  color: var(--navy-dark);
+  padding: 7px 12px;
+  border-radius: 20px;
   font-size: 13px;
-  color: #777;
-  margin-bottom: 7px;
+  font-weight: bold;
 }
 
-.experience-item p {
-  font-size: 14px;
-  color: #555;
+      /* ============================================================
+         EXPERIENCE
+         ============================================================ */
+      .experience-list {
+        display: grid;
+        gap: 18px;
+      }
+
+     .experience-item {
+  padding: 20px;
+  background: var(--blue-light);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--navy);
+  border-radius: 7px;
 }
-      /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
+      .experience-item h3 {
+        color: var(--navy);
+        font-size: 18px;
+        margin-bottom: 3px;
+      }
+
+      .company {
+        font-size: 14px;
+        font-weight: bold;
+        color: #4c5966;
+      }
+
+      .date {
+        font-size: 13px;
+        color: #7a8490;
+        margin: 4px 0 9px;
+      }
+
+      .experience-item p {
+        font-size: 14px;
+        color: #4c5966;
+      }
+
+      /* ============================================================
+         PROJECT CARDS
+         ============================================================ */
       .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 18px;
       }
 
       .card {
-        border: 1px solid #eee;
-        border-radius: 6px;
+        border: 1px solid var(--border);
+        border-radius: 9px;
         overflow: hidden;
-        background: #fff;
+        background: var(--cream-light);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
-      /* Empty space for project photo */
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(31, 53, 83, 0.1);
+      }
+
       .card-photo {
-        height: 120px;
-        background: #ddd;
-        border-bottom: 1px dashed #aaa;
+        height: 135px;
+        background: #e9e2d6;
+        border-bottom: 1px solid var(--border);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #888;
-        font-size: 12px;
+        color: #7d776f;
+        font-size: 13px;
       }
 
       .card-text {
-        padding: 14px;
+        padding: 17px;
       }
 
       .card-text h3 {
-        font-size: 16px;
-        margin-bottom: 6px;
+        color: var(--navy);
+        font-size: 17px;
+        margin-bottom: 7px;
       }
 
       .card-text p {
         font-size: 14px;
-        color: #555;
+        color: var(--muted);
       }
 
-      /* ---------- MOBILE: stack cards vertically ---------- */
-      @media (max-width: 640px) {
+      /* ============================================================
+         FOOTER
+         ============================================================ */
+      footer {
+        text-align: center;
+        margin-top: 45px;
+        font-size: 13px;
+        color: #7a8490;
+      }
+
+      /* ============================================================
+         MOBILE
+         ============================================================ */
+      @media (max-width: 700px) {
+        .container {
+          padding: 32px 16px 50px;
+        }
+
+        header h1 {
+          font-size: 29px;
+        }
+
+        .photo {
+          width: 140px;
+          height: 140px;
+        }
+
+        .tabs {
+          flex-wrap: wrap;
+        }
+
+        .tab-button {
+          flex: 1;
+          min-width: 105px;
+        }
+
         .cards {
           grid-template-columns: 1fr;
+        }
+
+        .panel {
+          padding: 22px;
         }
       }
     </style>
@@ -177,160 +325,294 @@
 
   <body>
     <div class="container">
+
       <!-- ============================================================
-         HEADER: photo, name, experiences
-         ============================================================ -->
+           HEADER
+           ============================================================ -->
       <header>
-        <img src="profile.jpg" alt="Julia Al Rifai" class="photo" />
+        <img src="profile.jpg" class="photo" alt="Julia Al Rifai" />
 
         <h1>Julia Al Rifai</h1>
-        <p>Business Analytics · SQL · Python · Excel</p>
+
+        <p class="headline">
+          Business Analytics · SQL · Python · Tableau
+        </p>
+
+        <div class="professional-links">
+          <a href="www.linkedin.com/in/julia-al-rifai-7262bb2ba" target="_blank">LinkedIn</a>
+
+          <a
+            href="https://github.com/juliaalrifai"
+            target="_blank"
+          >
+            GitHub
+          </a>
+        </div>
       </header>
 
       <!-- ============================================================
-         TABS
-         ============================================================ -->
+           NAVIGATION
+           ============================================================ -->
       <div class="tabs">
-  <button class="tab-button active" onclick="showTab('about')">
-    About Me
-  </button>
-  <button class="tab-button" onclick="showTab('experience')">
-    Experience
-  </button>
-  <button class="tab-button" onclick="showTab('projects')">
-    Projects
-  </button>
-</div>
+        <button
+          class="tab-button active"
+          onclick="showTab('about', this)"
+        >
+          About Me
+        </button>
 
-      <!-- ---------- TAB 1: ABOUT ME ---------- -->
+        <button
+          class="tab-button"
+          onclick="showTab('experience', this)"
+        >
+          Experience
+        </button>
+
+        <button
+          class="tab-button"
+          onclick="showTab('projects', this)"
+        >
+          Projects
+        </button>
+      </div>
+
+      <!-- ============================================================
+           ABOUT ME
+           ============================================================ -->
       <div id="about" class="tab-content active">
         <div class="panel">
-          <p>
-            I am a Master of Management in Analytics student at McGill University
-            with a background in Digital Enterprise Management from the University
-            of Toronto. My experience in digital marketing, paid media, and
-            analytics has strengthened my ability to analyze data, identify
-            meaningful insights, and translate them into practical business
-            recommendations. I am seeking opportunities in business analytics and
-            consulting where I can apply analytical problem-solving and business
-            strategy to help organizations make data-driven decisions.
+
+          <h2 class="section-title">About Me</h2>
+
+          <p class="about-text">
+            I am a Master of Management in Analytics student at McGill
+            University with a background in Digital Enterprise Management
+            from the University of Toronto. My experience in digital
+            marketing, paid media, and analytics has strengthened my ability
+            to analyze data, identify meaningful insights, and translate
+            them into practical business recommendations. I am seeking
+            opportunities in business analytics and consulting where I can
+            apply analytical problem-solving and business strategy to help
+            organizations make data-driven decisions.
           </p>
+
+          <h3 class="skills-title">Core Skills</h3>
+
+          <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Excel</span>
+            <span class="skill">Data Analysis</span>
+            <span class="skill">Business Analysis</span>
+            <span class="skill">Market Research</span>
+            <span class="skill">Google Analytics</span>
+            <span class="skill">Stakeholder Communication</span>
+          </div>
+
         </div>
       </div>
-        <!-- ---------- TAB 2: EXPERIENCE ---------- -->
+
+      <!-- ============================================================
+           EXPERIENCE
+           ============================================================ -->
       <div id="experience" class="tab-content">
         <div class="panel">
 
-          <div class="experience-item">
-            <h3>Paid Media Intern</h3>
-            <div class="company">Tug Agency · Toronto</div>
-            <div class="date">June 2025 – August 2025</div>
-            <p>
-              Analyzed campaign performance to identify optimization opportunities,
-              redesigned Google Ads account structures, and supported data-driven
-              budget allocation. Synthesized industry research into actionable
-              marketing insights.
-            </p>
-          </div>
+          <h2 class="section-title">Professional Experience</h2>
 
-          <div class="experience-item">
-            <h3>Peer Academic Support Facilitator</h3>
-            <div class="company">University of Toronto Mississauga · Mississauga, ON</div>
-            <div class="date">May 2025 – July 2025</div>
-            <p>
-              Guided students through structured problem-solving approaches and
-              individualized learning strategies while adapting recommendations
-              and communication to diverse needs.
-            </p>
-          </div>
+          <div class="experience-list">
 
-          <div class="experience-item">
-            <h3>Media Strategy Lead</h3>
-            <div class="company">Feed The Future UTM · University of Toronto Mississauga</div>
-            <div class="date">October 2024 – May 2025</div>
-            <p>
-              Led digital media strategy using engagement analytics to develop
-              data-informed outreach initiatives, contributing to a 30% increase
-              in engagement while promoting five campus events.
-            </p>
-          </div>
+            <!-- EXPERIENCE 1 -->
+            <div class="experience-item">
+              <h3>Paid Media Intern</h3>
 
-          <div class="experience-item">
-            <h3>Brand Strategy Intern</h3>
-            <div class="company">Epic Experiences · Toronto, ON</div>
-            <div class="date">January 2025 – March 2025</div>
-            <p>
-              Analyzed campaign performance and audience insights to inform content
-              strategy and developed monthly newsletters that achieved 20%+ open rates.
-            </p>
-          </div>
+              <div class="company">
+                Tug Agency · Toronto
+              </div>
 
-          <div class="experience-item">
-            <h3>Digital Marketing Intern</h3>
-            <div class="company">New Grocery Movement · Mississauga, ON</div>
-            <div class="date">September 2024 – November 2024</div>
-            <p>
-              Analyzed campaign performance in Excel to identify trends and recommend
-              improvements, contributing to a 49% increase in Instagram engagement.
-              Redesigned website content to improve user experience and brand consistency.
-            </p>
-          </div>
+              <div class="date">
+                June 2025 – August 2025
+              </div>
 
+              <p>
+               Analyzed campaign performance to identify optimization opportunities, restructured Google Ads campaigns, and supported data-driven budget allocation. Conducted industry research to develop actionable business and marketing insights
+              </p>
+            </div>
+
+            <!-- EXPERIENCE 2 -->
+            <div class="experience-item">
+              <h3>Peer Academic Support Facilitator</h3>
+
+              <div class="company">
+                University of Toronto Mississauga · Mississauga, ON
+              </div>
+
+              <div class="date">
+                May 2025 – July 2025
+              </div>
+
+              <p>
+                Guided students through structured problem-solving approaches
+                and individualized learning strategies while adapting
+                recommendations and communication to diverse needs.
+              </p>
+            </div>
+
+            <!-- EXPERIENCE 3 -->
+            <div class="experience-item">
+              <h3>Media Strategy Lead</h3>
+
+              <div class="company">
+                Feed The Future UTM · University of Toronto Mississauga
+              </div>
+
+              <div class="date">
+                October 2024 – May 2025
+              </div>
+
+              <p>
+                Led digital media strategy and used engagement analytics to guide content and outreach decisions, contributing to a 30% increase in engagement and promoting five campus events
+              </p>
+            </div>
+
+            <!-- EXPERIENCE 4 -->
+            <div class="experience-item">
+              <h3>Brand Strategy Intern</h3>
+
+              <div class="company">
+                Epic Experiences · Toronto, ON
+              </div>
+
+              <div class="date">
+                January 2025 – March 2025
+              </div>
+
+              <p>
+                Analyzed campaign performance and audience insights to inform
+                content strategy and developed monthly newsletters that
+                achieved 20%+ open rates.
+              </p>
+            </div>
+
+            <!-- EXPERIENCE 5 -->
+            <div class="experience-item">
+              <h3>Digital Marketing Intern</h3>
+
+              <div class="company">
+                New Grocery Movement · Mississauga, ON
+              </div>
+
+              <div class="date">
+                September 2024 – November 2024
+              </div>
+
+              <p>
+                Analyzed campaign performance in Excel to identify trends and
+                recommend improvements, contributing to a 49% increase in
+                Instagram engagement. Redesigned website content to improve
+                user experience and brand consistency.
+              </p>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <!-- ---------- TAB 3: PROJECTS ---------- -->
+      <!-- ============================================================
+           PROJECTS
+           ============================================================ -->
       <div id="projects" class="tab-content">
+
         <div class="cards">
-          <!-- CARD 1 -->
+
+          <!-- PROJECT 1 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+
+            <div class="card-photo">
+              Project Image
             </div>
+
+            <div class="card-text">
+              <h3>Analytics Project</h3>
+
+              <p>
+                Project details and analytical tools will be added here.
+              </p>
+            </div>
+
           </div>
 
-          <!-- CARD 2 -->
+          <!-- PROJECT 2 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+
+            <div class="card-photo">
+              Project Image
             </div>
+
+            <div class="card-text">
+              <h3>Data Analysis Project</h3>
+
+              <p>
+                Project details and analytical tools will be added here.
+              </p>
+            </div>
+
           </div>
 
-          <!-- CARD 3 -->
+          <!-- PROJECT 3 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+
+            <div class="card-photo">
+              Project Image
             </div>
+
+            <div class="card-text">
+              <h3>Business Analytics Project</h3>
+
+              <p>
+                Project details and analytical tools will be added here.
+              </p>
+            </div>
+
           </div>
+
         </div>
       </div>
+
+      <!-- ============================================================
+           FOOTER
+           ============================================================ -->
+      <footer>
+        © 2026 Julia Al Rifai · Business Analytics Portfolio
+      </footer>
+
     </div>
 
     <!-- ============================================================
-       SIMPLE TAB SWITCHING SCRIPT
-       ============================================================ -->
+         TAB SWITCHING
+         ============================================================ -->
     <script>
-      function showTab(id) {
-        // hide all tab contents
-        document.querySelectorAll(".tab-content").forEach(function (el) {
-          el.classList.remove("active");
-        });
+      function showTab(id, button) {
 
-        // remove active state from all buttons
-        document.querySelectorAll(".tab-button").forEach(function (btn) {
-          btn.classList.remove("active");
-        });
+        document
+          .querySelectorAll(".tab-content")
+          .forEach(function (content) {
+            content.classList.remove("active");
+          });
 
-        // show the selected tab + highlight the clicked button
-        document.getElementById(id).classList.add("active");
-        event.target.classList.add("active");
+        document
+          .querySelectorAll(".tab-button")
+          .forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+
+        document
+          .getElementById(id)
+          .classList.add("active");
+
+        button.classList.add("active");
       }
     </script>
+
   </body>
 </html>
