@@ -19,16 +19,16 @@
       }
 
       :root {
-  --navy: #1f3553;
-  --navy-dark: #17283f;
- --cream: #faf8f4;
---cream-light: #fffdf9;
-  --blue-light: #e8eef4;
-  --blue-soft: #dbe5ee;
-  --text: #26313d;
-  --muted: #66717d;
-  --border: #d4dce4;
-}
+        --navy: #1f3553;
+        --navy-dark: #17283f;
+        --cream: #faf8f4;
+        --cream-light: #fffdf9;
+        --blue-light: #e8eef4;
+        --blue-soft: #dbe5ee;
+        --text: #26313d;
+        --muted: #66717d;
+        --border: #d4dce4;
+      }
 
       body {
         font-family: Arial, Helvetica, sans-serif;
@@ -47,32 +47,36 @@
          HEADER
          ============================================================ */
       header {
-  text-align: center;
-  margin-bottom: 36px;
-  background: var(--navy);
-  padding: 35px 25px;
-  border-radius: 12px;
-}
+        text-align: center;
+        margin-bottom: 36px;
+        background: var(--navy);
+        padding: 35px 25px;
+        border-radius: 12px;
+      }
 
-header h1 {
-  color: white;
-  font-size: 34px;
-  margin-bottom: 6px;
-}
-
-.headline {
-  font-size: 16px;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
+      /* FIXED: PHOTO IS NOW CIRCULAR AND NORMAL SIZE */
+      .photo {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 20%;
+        margin: 0 auto 16px;
+        display: block;
+        border: 4px solid white;
+      }
 
       header h1 {
-        color: var(--navy);
+        color: white;
         font-size: 34px;
         margin-bottom: 6px;
       }
 
-    
+      .headline {
+        font-size: 16px;
+        color: #ffffff;
+        margin-bottom: 16px;
+      }
 
       /* ---------- PROFESSIONAL LINKS ---------- */
       .professional-links {
@@ -83,22 +87,22 @@ header h1 {
       }
 
       .professional-links a {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid white;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0 5px;
-  transition: 0.2s ease;
-}
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid white;
+        border-radius: 5px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 5px;
+        transition: 0.2s ease;
+      }
 
-.professional-links a:hover {
-  background: white;
-  color: var(--navy);
-}
+      .professional-links a:hover {
+        background: white;
+        color: var(--navy);
+      }
 
       /* ============================================================
          TABS
@@ -141,13 +145,13 @@ header h1 {
         display: block;
       }
 
-     .panel {
-  background: var(--cream-light);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 12px rgba(31, 53, 83, 0.06);
-}
+      .panel {
+        background: var(--cream-light);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(31, 53, 83, 0.06);
+      }
 
       .section-title {
         color: var(--navy);
@@ -175,14 +179,14 @@ header h1 {
         gap: 9px;
       }
 
-     .skill {
-  background: var(--blue-soft);
-  color: var(--navy-dark);
-  padding: 7px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: bold;
-}
+      .skill {
+        background: var(--blue-soft);
+        color: var(--navy-dark);
+        padding: 7px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+      }
 
       /* ============================================================
          EXPERIENCE
@@ -192,13 +196,14 @@ header h1 {
         gap: 18px;
       }
 
-     .experience-item {
-  padding: 20px;
-  background: var(--blue-light);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--navy);
-  border-radius: 7px;
-}
+      .experience-item {
+        padding: 20px;
+        background: var(--blue-light);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--navy);
+        border-radius: 7px;
+      }
+
       .experience-item h3 {
         color: var(--navy);
         font-size: 18px;
@@ -294,15 +299,15 @@ header h1 {
           font-size: 29px;
         }
 
-       .photo {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 30%;
-  margin: 0 auto 16px;
-  display: block;
-}
+        .photo {
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center 30%;
+          margin: 0 auto 16px;
+          display: block;
+        }
 
         .tabs {
           flex-wrap: wrap;
@@ -331,6 +336,7 @@ header h1 {
            HEADER
            ============================================================ -->
       <header>
+
         <img src="profile.jpg" class="photo" alt="Julia Al Rifai" />
 
         <h1>Julia Al Rifai</h1>
@@ -340,16 +346,21 @@ header h1 {
         </p>
 
         <div class="professional-links">
-          <a href="www.linkedin.com/in/julia-al-rifai-7262bb2ba" target="_blank">LinkedIn</a>
-
-    
+          <a
+            href="https://www.linkedin.com/in/julia-al-rifai-7262bb2ba"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
         </div>
+
       </header>
 
       <!-- ============================================================
            NAVIGATION
            ============================================================ -->
       <div class="tabs">
+
         <button
           class="tab-button active"
           onclick="showTab('about', this)"
@@ -370,6 +381,7 @@ header h1 {
         >
           Projects
         </button>
+
       </div>
 
       <!-- ============================================================
@@ -392,8 +404,7 @@ header h1 {
             organizations make data-driven decisions.
           </p>
 
-
-
+        </div>
       </div>
 
       <!-- ============================================================
@@ -419,7 +430,10 @@ header h1 {
               </div>
 
               <p>
-               Analyzed campaign performance to identify optimization opportunities, restructured Google Ads campaigns, and supported data-driven budget allocation. Conducted industry research to develop actionable business and marketing insights
+                Analyzed campaign performance to identify optimization opportunities,
+                restructured Google Ads campaigns, and supported data-driven budget
+                allocation. Conducted industry research to develop actionable business
+                and marketing insights.
               </p>
             </div>
 
@@ -455,7 +469,9 @@ header h1 {
               </div>
 
               <p>
-                Led digital media strategy and used engagement analytics to guide content and outreach decisions, contributing to a 30% increase in engagement and promoting five campus events
+                Led digital media strategy and used engagement analytics to guide
+                content and outreach decisions, contributing to a 30% increase in
+                engagement and promoting five campus events.
               </p>
             </div>
 
