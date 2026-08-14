@@ -42,6 +42,7 @@
         border-radius: 50%;
         object-fit: cover;
         border: 2px solid #aaa;
+        object-position: center 20%;
         margin: 0 auto 16px;
         display: block;
       }
@@ -94,7 +95,37 @@
         border-radius: 6px;
         padding: 24px;
       }
+/* ---------- EXPERIENCE ---------- */
+.experience-item {
+  margin-bottom: 24px;
+}
 
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.experience-item h3 {
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+.experience-item .company {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.experience-item .date {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 7px;
+}
+
+.experience-item p {
+  font-size: 14px;
+  color: #555;
+}
       /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
       .cards {
         display: grid;
@@ -160,13 +191,16 @@
          TABS
          ============================================================ -->
       <div class="tabs">
-        <button class="tab-button active" onclick="showTab('about')">
-          About Me
-        </button>
-        <button class="tab-button" onclick="showTab('projects')">
-          Projects
-        </button>
-      </div>
+  <button class="tab-button active" onclick="showTab('about')">
+    About Me
+  </button>
+  <button class="tab-button" onclick="showTab('experience')">
+    Experience
+  </button>
+  <button class="tab-button" onclick="showTab('projects')">
+    Projects
+  </button>
+</div>
 
       <!-- ---------- TAB 1: ABOUT ME ---------- -->
       <div id="about" class="tab-content active">
@@ -183,8 +217,69 @@
           </p>
         </div>
       </div>
+        <!-- ---------- TAB 2: EXPERIENCE ---------- -->
+      <div id="experience" class="tab-content">
+        <div class="panel">
 
-      <!-- ---------- TAB 2: PROJECTS ---------- -->
+          <div class="experience-item">
+            <h3>Paid Media Intern</h3>
+            <div class="company">Tug Agency · Toronto</div>
+            <div class="date">June 2025 – August 2025</div>
+            <p>
+              Analyzed campaign performance to identify optimization opportunities,
+              redesigned Google Ads account structures, and supported data-driven
+              budget allocation. Synthesized industry research into actionable
+              marketing insights.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>Peer Academic Support Facilitator</h3>
+            <div class="company">University of Toronto Mississauga · Mississauga, ON</div>
+            <div class="date">May 2025 – July 2025</div>
+            <p>
+              Guided students through structured problem-solving approaches and
+              individualized learning strategies while adapting recommendations
+              and communication to diverse needs.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>Media Strategy Lead</h3>
+            <div class="company">Feed The Future UTM · University of Toronto Mississauga</div>
+            <div class="date">October 2024 – May 2025</div>
+            <p>
+              Led digital media strategy using engagement analytics to develop
+              data-informed outreach initiatives, contributing to a 30% increase
+              in engagement while promoting five campus events.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>Brand Strategy Intern</h3>
+            <div class="company">Epic Experiences · Toronto, ON</div>
+            <div class="date">January 2025 – March 2025</div>
+            <p>
+              Analyzed campaign performance and audience insights to inform content
+              strategy and developed monthly newsletters that achieved 20%+ open rates.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <h3>Digital Marketing Intern</h3>
+            <div class="company">New Grocery Movement · Mississauga, ON</div>
+            <div class="date">September 2024 – November 2024</div>
+            <p>
+              Analyzed campaign performance in Excel to identify trends and recommend
+              improvements, contributing to a 49% increase in Instagram engagement.
+              Redesigned website content to improve user experience and brand consistency.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ---------- TAB 3: PROJECTS ---------- -->
       <div id="projects" class="tab-content">
         <div class="cards">
           <!-- CARD 1 -->
